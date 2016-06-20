@@ -19,7 +19,8 @@ function build (options, callback) {
         url: options.url || 'mongodb://localhost:27017/test'
       }
     },
-    require('./lib/insert')
+    require('./lib/insert'),
+    require('./lib/fetch')
   ], (err) => {
     callback(err, server)
   })
