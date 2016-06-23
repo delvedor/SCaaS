@@ -2,6 +2,13 @@
 
 const minimist = require('minimist')
 const Hapi = require('hapi')
+const Bcrypt = require('bcrypt')
+// This should be stored in a db
+const user = Object.freeze({
+  name: 'Conte Mascetti',
+  hash: '$2a$05$zag5NpCaV6/qG.bqt1h6tez8V2TEeyo2J9O4iNiKssMU1iZHQvJda',
+  password: 'supersecretpassword' // But not this :P
+})
 
 function build (options, callback) {
   const server = new Hapi.Server()
@@ -10,6 +17,20 @@ function build (options, callback) {
 
   server.connection({
     port: options.port
+  })
+
+  server.register(require('hapi-auth-basic'), (err) => {
+    if (err) {
+      throw err
+    }
+    server.auth.strategy('simple', 'basic', {
+      validateFunc: function (request, username, password, callback) {
+        if (username !== user.name) return callback(null, false)
+        Bcrypt.compare(password, user.hash, (err, isValid) => {
+          callback(err, isValid, { name: user.name })
+        })
+      }
+    })
   })
 
   server.register([
@@ -60,4 +81,4 @@ if (require.main === module) {
   })
 }
 
-module.exports = { build, start }
+module.exports = { build, start, user }
