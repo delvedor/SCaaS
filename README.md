@@ -6,7 +6,7 @@ SuperCazzola as a Service
 *'SuperCazzola'* is an italian word and is not translatable in english, is taken from the movie *'Amici Miei'*, a masterpiece of the Italian comedy.
 
 ## How
-Hapi.js and other stuff, have a look [here](https://github.com/delvedor/SCaaS/blob/master/package.json#L14-L25) :)  
+Hapi.js and other stuff, have a look [here](https://github.com/delvedor/SCaaS/blob/master/package.json#L14-L27) :)  
 The code follows the Standard code style.  
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 

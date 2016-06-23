@@ -12,7 +12,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "hapi": "^13.4.1",
+    "hapi-auth-basic": "^4.2.0",
     "hapi-mongodb": "^6.0.0",
     "joi": "^8.4.2",
     "minimist": "^1.2.0"
