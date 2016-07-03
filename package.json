@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "bcrypt": "^0.8.7",
+    "boom": "^3.2.2",
     "hapi": "^13.4.1",
     "hapi-auth-basic": "^4.2.0",
     "hapi-mongodb": "^6.0.0",
